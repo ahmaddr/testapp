@@ -1,0 +1,21 @@
+
+http://localhost/dev/wp-json/wc/v2/products
+consumer_key	=	ck_c80e604a4c730e64007c496c4d0abe70cb71abff
+consumer_secret	=	cs_295f9e9ca213e646e698cd9104eae43a692b6091
+
+
+http://localhost/dev/wp-json/wc/v2/products?
+consumer_key=ck_c80e604a4c730e64007c496c4d0abe70cb71abff&
+consumer_secret=cs_295f9e9ca213e646e698cd9104eae43a692b6091
+
+http://localhost/dev/wp-json/wc/v2/products?consumer_key=ck_c80e604a4c730e64007c496c4d0abe70cb71abff&consumer_secret=cs_295f9e9ca213e646e698cd9104eae43a692b6091
+
+http://localhost/dev/wp-json/wc/v2/products?consumer_key=ck_c80e604a4c730e64007c496c4d0abe70cb71abff&consumer_secret=cs_295f9e9ca213e646e698cd9104eae43a692b6091
+
+
+//////////////diable authen
+	add_filter( 'woocommerce_rest_check_permissions', 'my_woocommerce_rest_check_permissions', 90, 4 );
+
+function my_woocommerce_rest_check_permissions( $permission, $context, $object_id, $post_type  ){
+  return true;
+}
